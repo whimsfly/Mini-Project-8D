@@ -33,4 +33,32 @@ def ubah_harga(harga):
 
     return int(angka)
 
+def pilih_hari ():
+    while True:
+        print("\nPilih Jenis Kunjungan")
+        print("1. Weekday")
+        print("2. Weekend")
+
+        pilihan = input("Masukkan pilihan: ")
+
+        if pilihan == "1":
+            return "Tiket Masuk Weekday"
+
+        elif pilihan == "2":
+            return "Tiket Masuk Weekend"
+
+        else:
+            print("Pilihan tidak valid!")
+
+def daftar_harga(data_wisata, kolom_harga):
+    daftar = set()
+
+    for wisata in data_wisata:
+        harga = ubah_harga(wisata[kolom_harga])
+
+    print("\nDaftar Harga Tiket:")
+
+    for harga in sorted(daftar):
+        print(f"Rp{harga:,}".replace(",", "."))
+
 
