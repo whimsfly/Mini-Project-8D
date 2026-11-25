@@ -41,8 +41,7 @@ print("SILAHKAN PILIH BEBERAPA MENU BERIKUT : ")
 
 import csv
 
-nama_file = r"C:\Users\ACER\Documents\Mini project 8D\dataset_wisata_jember.csv"
-
+nama_file = r"dataset_wisata_jember.csv"
 
 def baca_dataset():
     data_wisata = []
