@@ -1,12 +1,12 @@
 # MINI-PROJECT-8D
 
-🌴# Analisis dan Rekomendasi Wisata Jember
+# 🌴 Analisis dan Rekomendasi Wisata Jember
 
-📖 # Tentang Proyek
+#  📖 Tentang Proyek
 
 Proyek ini merupakan program analisis dan rekomendasi destinasi wisata di Kabupaten Jember menggunakan bahasa pemrograman Python dan dataset CSV. Program ini membantu pengguna menemukan destinasi wisata berdasarkan harga tiket serta menentukan 10 destinasi terbaik berdasarkan rating dan harga tiket masuk.
 
-✨# Fitur Utama
+# ✨ Fitur Utama
 
 1. Rekomendasi Berdasarkan Harga
    Mencari destinasi wisata berdasarkan harga tiket masuk weekday atau weekend.
