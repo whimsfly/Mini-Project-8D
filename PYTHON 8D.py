@@ -134,3 +134,96 @@ def rekomendasi_harga(data_wisata):
             print(f" Rating : {wisata['Rating']}")
             print(f" Harga : Rp{ubah_harga(wisata[kolom_harga]):,}".replace(",", "."))
             print(f" Lokasi : {wisata['Lokasi']}")
+
+def hitung_skor(data_wisata, kolom_harga):
+    harga_maksimal = max(
+        ubah_harga(wisata[kolom_harga])
+        for wisata in data_wisata
+    )
+
+    hasil = []
+
+    for wisata in data_wisata:
+        try:
+            rating = float(wisata["Rating"].replace(",", "."))
+        except (ValueError, AttributeError):
+            rating = 0
+
+        harga = ubah_harga(wisata[kolom_harga])
+
+        if harga_maksimal> 0:
+            normalisasi_harga = 1 - (harga / harga_maksimal)
+        else:
+            normalisasi_harga = 0
+
+        normalisasi_rating = rating / 5
+
+        skor = (
+            (normalisasi_rating * 0.70) +
+            (normalisasi_harga * 0.30)
+        )
+
+        hasil.append((wisata, skor, harga))
+
+    return sorted(
+        hasil,
+        key=lambda x: (
+            x[1],
+            float(x[0]["Rating"].replace(",", ".")),
+            -x[2]
+        ),
+        reverse=True)
+
+def top_10(data_wisata):
+    kolom_harga = pilih_hari()
+
+    hasil = hitung_skor(data_wisata, kolom_harga)
+
+    print("\nTop 10 Destinasi Wisata Jember")
+    print("Berdasarkan Rating dan Harga Tiket")
+    print("Bobot Rating: 70% | Bobot Harga: 30%")
+
+    for nomor, (wisata, skor, harga) in enumerate(hasil[:10], start=1):
+        print(f"\n{nomor}. {wisata['Nama Wisata']}")
+        print(f"   Rating : {wisata['Rating']}")
+        print(f"   Harga  : Rp{harga:,}".replace(",", "."))
+        print(f"   Skor   : {skor:.3f}")
+        print(f"   Lokasi : {wisata['Lokasi']}")
+
+def detail_wisata(wisata):
+    print("\n========== DETAIL DESTINASI WISATA ==========")
+
+    print("Nama Wisata : ", wisata["Nama Wisata"])
+    print("Rating      : ", wisata["Rating"])
+    print("Weekday     : ", wisata["Tiket Masuk Weekday"])
+    print("Weekend     : ", wisata["Tiket Masuk Weekend"])
+    print("Lokasi      : ", wisata["Lokasi"])
+    print("Deskripsi   : ", wisata["Deskripsi"])
+    print("Link Foto   ", wisata["Link Foto"])
+
+    print("===============================================")
+
+def daftar_destinasi(data_wisata):
+
+    print("\n========== DAFTAR DESTINASI WISATA JEMBER ==========")
+
+    for nomor, wisata in enumerate(data_wisata, start=1):
+      print(f"{nomor}. {wisata['Nama Wisata']}")
+
+    print("\n0. Kembali ke menu utama")
+
+    try:
+        pilihan = int(input("\nMasukkan nomor destinasi wisata untuk melihat detailnya (0 untuk kembali): "))
+
+        if pilihan == 0:
+            return
+
+        elif 1<= pilihan <= len(data_wisata):
+            wisata = data_wisata[pilihan - 1]
+            detail_wisata(wisata)
+
+        else:
+            print("Nomor destinasi tidak tersedia")
+
+    except ValueError:
+        print("Masukkan nomor yang benar")
