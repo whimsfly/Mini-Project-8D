@@ -1,13 +1,13 @@
 # MINI-PROJECT-8D
 
 #  Analisis dan Rekomendasi Wisata Jember
+Program Python berbasis terminal untuk menganalisis dan merekomendasikan destinasi wisata Kabupaten Jember berdasarkan rating dan harga tiket masuk.
+Mini project mata kuliah Pemrograman Komputer, Laboratorium Sistem Informasi dan Keputusan, Departemen Teknik Industri, Fakultas Teknik, Universitas Andalas.
 
 #  Tentang Proyek
-
 Proyek ini merupakan program analisis dan rekomendasi destinasi wisata di Kabupaten Jember menggunakan bahasa pemrograman Python dan dataset CSV. Program ini membantu pengguna menemukan destinasi wisata berdasarkan harga tiket serta menentukan 10 destinasi terbaik berdasarkan rating dan harga tiket masuk.
 
 #  Fitur Utama
-
 1. Rekomendasi Berdasarkan Harga
    Mencari destinasi wisata berdasarkan harga tiket masuk weekday atau weekend.
 
@@ -16,3 +16,11 @@ Proyek ini merupakan program analisis dan rekomendasi destinasi wisata di Kabupa
 
 3. Detail Destinasi Wisata
    Menampilkan informasi nama wisata, rating, harga tiket, lokasi, deskripsi, dan link foto.
+
+   # Dataset
+• File : dataset_wisata_jember.csv
+• Sumber: dataset pariwisata Jember dari Kaggle, awalnya berupa file Excel yang dikonversi ke CSV.
+• Jumlah data: 76 destinasi wisata.
+• Kolom: Nama Wisata, Rating, Tiket Masuk Weekday, Tiket Masuk Weekend, Lokasi, Deskripsi, dan Link Foto.
+
+   
