@@ -4,6 +4,7 @@ print("MINI PROJECT".center(150))
 print("PROGRAM KOMPUTER".center(150))
 print()
 print("ANALISIS DAN REKOMENDASI WISATA JEMBER BERDASARKAN RATING DAN HARGA TIKET".center(150))
+print("ANALISIS DAN REKOMENDASI WISATA JEMBER")
 print("_"*150)
 print()
 print()
@@ -24,6 +25,7 @@ print()
 print("JIHAN FITRI SAKINAH".center(150))
 print(" ".center(150))
 print(" ".center(150))
+print()
 print()
 print("LABORATORIUM SISTEM INFORMASI DAN KOMPUTASI".center(150))
 print("JURUSAN TEKNIK INDUSTRI".center(150))
@@ -95,6 +97,7 @@ def daftar_harga(data_wisata, kolom_harga):
 
     for wisata in data_wisata:
         harga = ubah_harga(wisata[kolom_harga])
+        daftar.add(harga)
 
     print("\nDaftar Harga Tiket:")
 
@@ -103,12 +106,14 @@ def daftar_harga(data_wisata, kolom_harga):
 
 def rekomendasi_harga(data_wisata):
     kolom_harga = pilih_hari()
+
     daftar_harga(data_wisata, kolom_harga)
+
 
     while True:
         input_harga = input("\nMasukkan harga tiket yang dicari : ")
 
-        if input_harga.strip().lower() not in ["gartis", "free", "_"]:
+        if input_harga.strip().lower() not in ["gratis", "free", "_"]:
             if not any(char.isdigit() for char in input_harga):
                 print("MASUKKAN NOMINAL HARGA YANNG BENAR!")
                 continue
@@ -134,6 +139,7 @@ def rekomendasi_harga(data_wisata):
             print(f" Rating : {wisata['Rating']}")
             print(f" Harga : Rp{ubah_harga(wisata[kolom_harga]):,}".replace(",", "."))
             print(f" Lokasi : {wisata['Lokasi']}")
+
 
 def hitung_skor(data_wisata, kolom_harga):
     harga_maksimal = max(
@@ -227,3 +233,43 @@ def daftar_destinasi(data_wisata):
 
     except ValueError:
         print("Masukkan nomor yang benar")
+
+def menu_utama():
+
+    data_wisata = baca_dataset()
+
+    if not data_wisata:
+        print("Program tidak dapat dijalankan tanpa dataset!")
+        return
+
+    while True:
+        print("\n============================================")
+        print(" ANALISIS DAN REKOMENDASI WISATA JEMBER")
+        print("============================================")
+        print("1. Rekomendasi berdasarkan harga")
+        print("2. Top 10 destinasi wisata")
+        print("3. Daftar destinasi wisata dan detail")
+        print("4. Keluar")
+        print("============================================")
+
+        pilihan = input("Masukkan pilihan menu: ")
+
+        if pilihan == "1":
+            rekomendasi_harga(data_wisata)
+
+        elif pilihan == "2":
+            top_10(data_wisata)
+
+        elif pilihan == "3":
+            daftar_destinasi(data_wisata)
+
+        elif pilihan == "4":
+            print("\nTerima kasih telah menggunakan program ini!")
+            break
+
+        else:
+            print("\nPilihan tidak valid! Silakan pilih menu 1-4.")
+
+
+if __name__ == "__main__":
+    menu_utama()
