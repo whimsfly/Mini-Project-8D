@@ -23,4 +23,22 @@ Proyek ini merupakan program analisis dan rekomendasi destinasi wisata di Kabupa
 • Jumlah data: 76 destinasi wisata.
 • Kolom: Nama Wisata, Rating, Tiket Masuk Weekday, Tiket Masuk Weekend, Lokasi, Deskripsi, dan Link Foto.
 
+# Struktur File
+
+| File | Isi |
+| :--- | :--- |
+| `main.py` | Menu utama dan titik awal program |
+| `data_wisata.py` | Membaca dataset, mengubah format harga, memilih jenis kunjungan |
+| `rekomendasi_harga.py` | Fitur rekomendasi berdasarkan harga (menu 1) |
+| `top10.py` | Perhitungan skor dan Top 10 destinasi (menu 2) |
+| `destinasi.py` | Daftar destinasi dan detailnya (menu 3) |
+| `dataset_wisata_jember.csv` | Dataset destinasi wisata |
+
+# Cara Menjalankan
+1. Pastikan Python 3 sudah terpasang.
+2. Letakkan semua file .py dan dataset_wisata_jember.csv dalam satu folder.
+3. Buka terminal di folder tersebut, lalu jalankan:
+python main.py
+4. Pilih menu dengan mengetik angka 1 sampai 4.
+
    
