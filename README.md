@@ -44,6 +44,20 @@ python main.py
 ```
 
 4. Pilih menu dengan mengetik angka `1` sampai `4`.
+   # Tim Penyusun
+  **Kelompok 8D**
+
+| Nama Mahasiswa | NIM |
+| :--- | :--- |
+| Tsani Rosyidah Basyusyi | 2610932007 |
+| Muhammad Fadli | 2610932011 |
+| Kuntum Khairani | 2610933017 |
+| Muhammad Mukdiaraffi Fadillah | 2610933029 |
+
+- **Dosen Pengampu**: Ikhwan Arief, S.T., M.Sc.
+- **Asisten Pembimbing**: Jihan Fitri Sakinah
+- **Institusi**: Laboratorium Sistem Informasi dan Keputusan (LSIK), Departemen Teknik Industri, Fakultas Teknik, Universitas Andalas (2026)
+
    
   
 
