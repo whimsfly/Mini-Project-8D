@@ -36,9 +36,16 @@ Proyek ini merupakan program analisis dan rekomendasi destinasi wisata di Kabupa
 
 # Cara Menjalankan
 1. Pastikan Python 3 sudah terpasang.
-2. Letakkan semua file .py dan dataset_wisata_jember.csv dalam satu folder.
-3. Buka terminal di folder tersebut, lalu jalankan:
+2. Letakkan semua file `.py` dan `dataset_wisata_jember.csv` dalam satu folder.
+3. Buka terminal di folder tersebut, lalu jalankan perintah berikut:
+
+```bash
 python main.py
-4. Pilih menu dengan mengetik angka 1 sampai 4.
+```
+
+4. Pilih menu dengan mengetik angka `1` sampai `4`.
+   
+  
+
 
    
